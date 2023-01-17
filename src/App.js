@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
+import Scratch from "./pages/scratch";
+import Landing from "./pages/landing";
+import { useState } from "react";
 
 function App() {
+  const [keys, setKeys] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="bg-[#183250] h-screen flex flex-col items-center text-white">
+        <Navbar keys={keys} />
+        <div className="flex items-center justify-center h-full w-full">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route
+              path="/scratch"
+              element={<Scratch keys={keys} setKeys={setKeys} />}
+            />
+          </Routes>
+        </div>
+      </div>
     </div>
   );
 }
