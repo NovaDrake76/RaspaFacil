@@ -156,7 +156,7 @@ const Scratch = ({ keys, setKeys }) => {
       }, 1000);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [flippedHistory, keys, setKeys]);
+  }, [flippedHistory]);
 
   return (
     <div className="w-[80vw] h-[80vh] flex bg-[#2B62AA] p-4 ">
