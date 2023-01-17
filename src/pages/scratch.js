@@ -121,6 +121,7 @@ const Scratch = ({ keys, setKeys }) => {
   useEffect(() => {
     if (flippedHistory.includes(4)) {
       notifyKey();
+      setEndGame(true);
       setKeys(keys + 1);
       setTimeout(() => {
         setFlippedHistory([]);
