@@ -126,6 +126,7 @@ const Scratch = ({ keys, setKeys }) => {
       setTimeout(() => {
         setFlippedHistory([]);
         setClickedId(null);
+        setEndGame(true);
       }, 2000);
     }
 
