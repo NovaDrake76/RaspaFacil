@@ -128,7 +128,6 @@ const Scratch = ({ keys, setKeys }) => {
       }, 2000);
     }
 
-    //eslint-disable-next-line
     if (flippedHistory.length === 3) {
       setEndGame(true);
       const [first, second, third] = flippedHistory;
@@ -156,7 +155,8 @@ const Scratch = ({ keys, setKeys }) => {
         setEndGame(false);
       }, 1000);
     }
-  }, [flippedHistory]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [flippedHistory, keys, setKeys]);
 
   return (
     <div className="w-[80vw] h-[80vh] flex bg-[#2B62AA] p-4 ">
@@ -185,7 +185,7 @@ const Scratch = ({ keys, setKeys }) => {
         </div>
         <img src="https://i.imgur.com/pjFndeY.png" alt="" className="w-full" />
       </div>
-      <div className="flex gap-2 w-1/2 flex-wrap ml-4">
+      <div className="flex gap-2 w-1/2 flex-wrap ml-24">
         {scratchs.map((scratch) => (
           <div
             key={scratch.name + scratch.id}
