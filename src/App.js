@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Scratch from "./pages/scratch";
-import Landing from "./pages/landing";
 import { useState } from "react";
 
 function App() {
@@ -12,7 +11,10 @@ function App() {
         <Navbar keys={keys} />
         <div className="flex items-center justify-center h-full w-full">
           <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route
+              path="/"
+              element={<Scratch keys={keys} setKeys={setKeys} />}
+            />
             <Route
               path="/scratch"
               element={<Scratch keys={keys} setKeys={setKeys} />}
